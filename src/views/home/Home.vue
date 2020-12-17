@@ -134,11 +134,13 @@ name: "Home",
     },
   },
   activated() {
+    console.log(this.saveY+'进入')
     this.$refs.scroll.scrollTo(0,this.saveY,0)
     this.$refs.scroll.refresh()
   },
   deactivated() {
     this.saveY = this.getScrollY();
+    console.log(this.saveY+'离开')
     //取消全局监听事件
     this.$bus.$off('itemImageLoad',this.itemImageListener)
   },
